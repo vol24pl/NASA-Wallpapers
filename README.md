@@ -38,6 +38,6 @@ Just use it with crontab or launch deamon 😎
 
 1. Download [pre-made App](https://github.com/vol24pl/NASA-Wallpaper/blob/main/NASA-wallpapers.zip) and unzip it
 2. (Optional) Copy it to Applications folder
-3. (Optional) Open it inside the Automator file and make sure the script inside is correct!
+3. (Optional) Open it inside the Automator.app and make sure the script inside is correct!
 4. Go to System Preferences -> Users And Groups -> Login Items
 5. Add it as Login Item
