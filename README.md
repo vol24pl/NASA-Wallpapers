@@ -7,17 +7,15 @@ This script can be easly repurposed for other operating systems. For POSIX syste
 ## macOS Script
 
 ```zsh
-sleep 10 && curl $(echo "https://apod.nasa.gov/apod/$(curl https://apod.nasa.gov/apod/astropix.html | grep -m 1 "png\|jpg\|jpeg" | awk -F '"' '{print $2}')") > /tmp/new-wallpaper && osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/tmp/new-wallpaper"' && sleep 3 && rm -rf /tmp/new-wallpaper
+sleep 10 && curl $(echo "https://apod.nasa.gov/apod/$(curl https://apod.nasa.gov/apod/astropix.html | grep -m 1 "png\|jpg\|jpeg" | awk -F '"' '{print $2}')") > /var/tmp/new-wallpaper && osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/var/tmp/new-wallpaper"'
 ```
 **This script:**
 
 1. Waits 10 seconds. Important, if it's used at booting Mac. You don't want to do it instantly, before (more important) macOS services are fully working.
 2. Goes into https://apod.nasa.gov/apod/astropix.html website and downloads the HTML code of the main site.
 3. Scanns the code for the first accurance of the PNG/JPG/JPEG files and glues together URL for that image.
-4. Downloads the image into `/tmp` folder (system's temporary folder).
+4. Downloads the image into `/var/tmp` folder (system's temporary folder).
 5. Uses AppleScript to set up the background image. This step requires permissions to control computer. AppleScript is an Apple scripting language to control UI Applications by commands, and can be easily abused. Always verify AppleScript (`osascript`) you are executing. Fortunately this part of the script almost reads as English so you can verify it with little to no coding abilities 🤓
-6. Waits 3 seconds so that macOS has time to setup the background.
-7. Delete the image from `/tmp` folder. No need to keep it, you will get a new one at a reboot :)
 
 ## How to make it run on each boot
 
