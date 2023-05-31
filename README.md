@@ -39,3 +39,10 @@ Just use it with crontab or launch deamon 😎
 3. (Optional) Open it inside the Automator.app and make sure the script inside is correct!
 4. Go to System Settings -> General -> Login Items
 5. Add it as Login Item
+
+## Warning ⚠️
+Sometimes NASA uploads non-image media, such as youtube videos. In this cases the script obviously won't work properly. Just wait for another day 😆
+
+|![Example of youtube video media](./video-example.png)|
+|:--:|
+|*Example of Youtube video media from May 31, 2023*|
